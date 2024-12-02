@@ -79,7 +79,7 @@ class Character extends Controller
     {
     $characterModel = $this->loadModel('CharacterModel');
     $id = $_POST['id'];
-    $name = $_POST['name'];
+    $name = $_POST['nama'];
     $tags = isset($_POST['tags']) ? implode(', ', $_POST['tags']) : ''; 
     $description = $_POST['description'];
     $image = $this->handlePosterUpload();

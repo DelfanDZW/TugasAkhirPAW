@@ -1,3 +1,11 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Karakter</title>
+    <link rel="stylesheet" href="assets/stylechar.css">
+</head>
+<body>
 <div class="insert-film-container">
     <form enctype="multipart/form-data" action="?c=Character&m=update" method="post">
         <input type="hidden" name="id" value="<?php echo $character->id; ?>">
@@ -37,4 +45,5 @@
         <input type="submit" value="Submit">
     </form>
 </div>
-
+</body>
+</html>

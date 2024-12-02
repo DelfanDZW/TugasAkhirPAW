@@ -52,16 +52,17 @@ class CharacterModel extends Model
             name = ?, 
             image = ?, 
             tags = ?, 
-            description = ?, 
+            description = ? 
         WHERE id = ?"
            );
 
            $stmt->bind_param(
-            "ssss",
+            "ssssi",
             $name,
             $image,
             $tags,
             $description,
+            $id
            );
           }
 
