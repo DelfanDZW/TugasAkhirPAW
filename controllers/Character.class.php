@@ -44,22 +44,17 @@ class Character extends Controller
 
 public function create()
 {
-    try {
+      try {
         $name = $_POST['name'];
         $tags = isset($_POST['tags']) ? implode(', ', $_POST['tags']) : '';
         $description = $_POST['description'];
         $image = $this->handlePosterUpload();
 
-        $model = new CharacterModel();
-        if ($model->insert($name, $image, $tags, $description)) {
-            header('Location: ?c=Character');
-        } else {
-            throw new Exception("Gagal menyimpan data.");
-        }
-    } catch (Exception $e) {
+        $characterModel = $this->loadModel('CharacterModel');
+      } catch (Exception $e) {
         echo "Error: " . $e->getMessage();
-    }
-}
+      }
+   }
 
 
    public function edit_form(): void
