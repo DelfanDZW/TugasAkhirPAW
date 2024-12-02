@@ -131,3 +131,85 @@ table img {
     max-width: 100px;
     height: auto;
 }
+
+.assets.styleadmin {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.film-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.film-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.film-card .image {
+    width: 150px; /* Lebar yang diinginkan */
+    height: 150px; /* Tinggi yang diinginkan */
+    object-fit: cover; /* Memastikan gambar tidak terdistorsi */
+    border-radius: 8px; /* Opsional, untuk sudut membulat */
+    display: block; /* Opsional, memastikan tidak ada jarak default */
+    margin: 0 auto; /* Opsional, untuk memusatkan gambar */
+}
+
+
+.film-card h3 {
+    margin: 16px;
+    font-size: 1.2em;
+    color: #333;
+    text-align: center;
+}
+
+.film-actions {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 16px;
+    background-color: #f1f1f1;
+    border-top: 1px solid #ddd;
+}
+
+.edit-button,
+.delete-button {
+    padding: 8px 12px;
+    font-size: 0.9em;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.edit-button {
+    background-color: #007bff;
+}
+
+.edit-button:hover {
+    background-color: #0056b3;
+}
+
+.delete-button {
+    background-color: #dc3545;
+}
+
+.delete-button:hover {
+    background-color: #a71d2a;
+}
+
+.no-films {
+    font-size: 1.2em;
+    color: #666;
+    text-align: center;
+    padding: 20px;
+}

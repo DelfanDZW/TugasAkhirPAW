@@ -9,7 +9,7 @@ class CharacterModel extends Model
     }
 
     public function insert($name, $image, $tags, $description) {
-     $stmt = $this->db->prepare("INSERT INTO characters (name, image, tags, description) VALUES (?, ?, ?, ?)");
+     $stmt = $this->mysqli->prepare("INSERT INTO characters (name, image, tags, description) VALUES (?, ?, ?, ?)");
      $stmt->bind_param('ssss', $name, $image, $tags, $description);
  
      return $stmt->execute();

@@ -26,36 +26,38 @@ class Character extends Controller
    }
 
    private function handlePosterUpload(): string
-{
-    $defaultImage = 'default.jpg'; // Default image jika tidak ada upload
+   {
+      $defaultImage = 'default.jpg'; // Default image jika tidak ada upload
 
-    if (isset($_FILES['uploadedfile']) && $_FILES['uploadedfile']['error'] !== UPLOAD_ERR_NO_FILE) {
-        $target_path = "img/" . basename($_FILES['uploadedfile']['name']);
+      if (isset($_FILES['uploadedfile']) && $_FILES['uploadedfile']['error'] !== UPLOAD_ERR_NO_FILE) {
+         $target_path = "img/" . basename($_FILES['uploadedfile']['name']);
 
-        if ($_FILES['uploadedfile']['error'] === UPLOAD_ERR_OK && move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) {
-            return basename($_FILES['uploadedfile']['name']);
-        } else {
-            echo "<script>alert('Gagal mengunggah file.');</script>";
-        }
-    }
-
-    return $defaultImage;
-}
-
-public function create()
-{
-      try {
-        $name = $_POST['name'];
-        $tags = isset($_POST['tags']) ? implode(', ', $_POST['tags']) : '';
-        $description = $_POST['description'];
-        $image = $this->handlePosterUpload();
-
-        $characterModel = $this->loadModel('CharacterModel');
-      } catch (Exception $e) {
-        echo "Error: " . $e->getMessage();
+         if ($_FILES['uploadedfile']['error'] === UPLOAD_ERR_OK && move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) {
+               return basename($_FILES['uploadedfile']['name']);
+         } else {
+               echo "<script>alert('Gagal mengunggah file.');</script>";
+         }
       }
+
+      return $defaultImage;
    }
 
+   public function create_form()
+   {
+      $this->loadView('insert_character');
+   }
+
+   public function create(): void
+   {
+      $characterModel = $this->loadModel('CharacterModel');
+      $name = addslashes($_POST['name']);
+      $image = $this->handlePosterUpload();
+      $tags = isset($_POST['tags']) ? addslashes(implode(', ', $_POST['tags'])) : '';
+      $description = addslashes($_POST['description']);
+
+      $characterModel->insert($name, $image, $tags, $description);
+      header('Location: ?c=Character');
+   }
 
    public function edit_form(): void
    {
