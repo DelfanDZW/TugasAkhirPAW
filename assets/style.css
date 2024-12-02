@@ -1,0 +1,154 @@
+/* style.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+
+}
+
+label {
+    display: block;
+}
+
+h1 {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #555;
+    font-size: 2rem;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+div {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+h3 {
+    color: #444;
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.tag-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.tag-checkbox {
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    margin: 0 5px;
+    background-color: #222;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.tag-checkbox:hover {
+    background-color: #444;
+    transform: scale(1.05);
+}
+
+.tag-checkbox span {
+    display: inline-block;
+    padding: 5px 15px;
+}
+
+input[type="checkbox"]:checked + span {
+    background-color: #ff5a5a;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.logout-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.logout-button:hover {
+    background-color: #c0392b;
+}
+
+button[type="reset"] {
+    background-color: #ff4c4c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="reset"]:hover {
+    background-color: #ff1a1a;
+}
+
+@media (max-width: 768px) {
+    .tag-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    img {
+        width: 100px;
+        height: 100px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
