@@ -27,7 +27,7 @@
             ?>
         </div>
 
-        <label for="description">Rilis Tahun:</label>
+        <label for="description">Deskripsi :</label>
         <input type="text" id="description" name="description" value="<?php echo htmlspecialchars($character->description); ?>" required>
 
         <label for="image">Picture URL:</label>
